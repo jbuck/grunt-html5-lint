@@ -1,6 +1,6 @@
 {
   "name": "grunt-html5-lint",
-  "description": "The best Grunt plugin ever.",
+  "description": "HTML Linting with Grunt",
   "version": "0.0.1",
   "homepage": "https://github.com/matt/grunt-html5-lint",
   "author": {
@@ -26,6 +26,11 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "async": "0.2.6",
+    "html5-lint": "0.2.1",
+    "shelljs": "0.1.2"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1",
