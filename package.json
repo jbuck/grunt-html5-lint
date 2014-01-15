@@ -2,10 +2,7 @@
   "name": "grunt-html5-lint",
   "description": "HTML5 validation",
   "version": "0.0.1",
-  "author": {
-    "name": "Matthew Schranz",
-    "email": "schranz.m@gmail.com"
-  },
+  "author": "Matthew Schranz <schranz.m@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/mjschranz/grunt-html5-lint"
@@ -31,6 +28,9 @@
   "keywords": [
     "gruntplugin"
   ],
-  "readme": "# grunt-lint5\n\n> HTML5 validation\n\n## Getting Started\nThis plugin requires Grunt `~0.4.1`\n\nIf you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:\n\n```shell\nnpm install grunt-lint5 --save-dev\n```\n\nOnce the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\n\n```js\ngrunt.loadNpmTasks('grunt-lint5');\n```\n\n### Usage Examples\n\n#### Default Options\nIn your project's Gruntfile, add a section named `lint5` to the data object passed into `grunt.initConfig()`.\n\n```js\ngrunt.initConfig({\n  lint5: {\n    views: \"value\" // The value in this key:value pair refer to where your template dir\n    defaults: {\n        // if you have used nunjucks and wanted to pass defaults value to the objects\n        // for example:\n        \"email\": \"a@a.com\",\n        \"username\": \"abcd\"\n      },\n      templates: {\n        \"index.html\": null, // files that you want to be check\n        \"layout.html\": null,\n      },\n      ignoreList: [\n        // the format of ignoreList is in the array format\n        \"message to be ignored\",\n        \"another message\"\n        // you can simply copy the message you got from the returned on the console\n        //for example this\n        \"Bad value “” for attribute “action” on element “form”: Must be non-empty.\"\n      ]\n    }\n  })\n```\n",
-  "readmeFilename": "README.md"
+  "homepage": "https://github.com/mjschranz/grunt-html5-lint",
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT"
 }
