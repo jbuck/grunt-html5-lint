@@ -1,11 +1,3 @@
-/*
- * grunt-lint5
- * https://github.com/mozilla/html5-lint
- *
- * Copyright (c) 2013 Mozilla
- * Licensed under the MIT license.
- */
-
 "use strict";
 
 module.exports = function( grunt ) {
@@ -13,21 +5,21 @@ module.exports = function( grunt ) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-grunt.registerTask( "lint5", "HTML5 validation", function() {
-    grunt.config.requires( "lint5.views" );
-    grunt.config.requires( "lint5.templates" );
+grunt.registerTask( "grunt-html5-lint", "HTML5 validation", function() {
+    grunt.config.requires( "grunt-html5-lint.views" );
+    grunt.config.requires( "grunt-html5-lint.templates" );
 
     var _ = grunt.util._,
         html5Lint = require( "html5-lint" ),
         nunjucks = require( "nunjucks" ),
-        views = grunt.config( "lint5.views" ),
-        defaults = grunt.config( "lint5.defaults" ) || {},
-        files = grunt.config( "lint5.templates" ),
+        views = grunt.config( "grunt-html5-lint.views" ),
+        defaults = grunt.config( "grunt-html5-lint.defaults" ) || {},
+        files = grunt.config( "grunt-html5-lint.templates" ),
         env = new nunjucks.Environment( new nunjucks.FileSystemLoader( views ) ),
         done = this.async(),
         pending = files.length,
         errors = 0,
-        ignoreList = grunt.config( "lint5.ignoreList" ) || [];
+        ignoreList = grunt.config( "grunt-html5-lint.ignoreList" ) || [];
 
     function complete() {
       pending--;

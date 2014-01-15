@@ -26,7 +26,9 @@
     "grunt": "~0.4.1"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "html5",
+    "lint"
   ],
   "homepage": "https://github.com/mjschranz/grunt-html5-lint",
   "directories": {
