@@ -14,7 +14,7 @@ npm install grunt-lint5 --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-lint5');
+grunt.loadNpmTasks( "grunt-lint5" );
 ```
 
 ### Usage Examples
@@ -27,23 +27,23 @@ grunt.initConfig({
   lint5: {
     views: "value" // The value in this key:value pair refer to where your template dir
     defaults: {
-        // if you have used nunjucks and wanted to pass defaults value to the objects
-        // for example:
-        "email": "a@a.com",
-        "username": "abcd"
-      },
-      templates: {
-        "index.html": null, // files that you want to be check
-        "layout.html": null,
-      },
-      ignoreList: [
-        // the format of ignoreList is in the array format
-        "message to be ignored",
-        "another message"
-        // you can simply copy the message you got from the returned on the console
-        //for example this
-        "Bad value “” for attribute “action” on element “form”: Must be non-empty."
-      ]
-    }
-  })
+      // if you have used nunjucks and wanted to pass defaults value to the objects
+      // for example:
+      "email": "a@a.com",
+      "username": "abcd"
+    },
+    templates: [
+      "index.html", // files that you want to be check
+      "layout.html"
+    ],
+    ignoreList: [
+      // the format of ignoreList is in the array format
+      "message to be ignored",
+      "another message"
+      // you can simply copy the message you got from the returned on the console
+      //for example this
+      "Bad value “” for attribute “action” on element “form”: Must be non-empty."
+    ]
+  }
+})
 ```

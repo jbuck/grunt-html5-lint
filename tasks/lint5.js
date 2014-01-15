@@ -6,9 +6,9 @@
  * Licensed under the MIT license.
  */
 
-'use strict';
+"use strict";
 
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
 
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
@@ -22,11 +22,9 @@ grunt.registerTask( "lint5", "HTML5 validation", function() {
         nunjucks = require( "nunjucks" ),
         views = grunt.config( "lint5.views" ),
         defaults = grunt.config( "lint5.defaults" ) || {},
-        templates = grunt.config( "lint5.templates" ),
-        
-        env = new nunjucks.Environment( new nunjucks.FileSystemLoader( views )),
+        files = grunt.config( "lint5.templates" ),
+        env = new nunjucks.Environment( new nunjucks.FileSystemLoader( views ) ),
         done = this.async(),
-        files = Object.keys( templates ),
         pending = files.length,
         errors = 0,
         ignoreList = grunt.config( "lint5.ignoreList" ) || [];
@@ -36,7 +34,7 @@ grunt.registerTask( "lint5", "HTML5 validation", function() {
       if ( pending === 0 ) {
         var passed = errors === 0;
         if ( passed ) {
-          grunt.log.ok( files.length + ' file' + (files.length === 1 ? '' : 's') + ' lint free.');
+          grunt.log.ok( files.length + " file" + (files.length === 1 ? "" : "s") + " lint free.");
         }
         done( passed );
       }
@@ -47,7 +45,7 @@ grunt.registerTask( "lint5", "HTML5 validation", function() {
           html = env.getTemplate( file ).render( data );
       html5Lint( html, function( err, results ) {
         if ( err ) {
-          grunt.fatal( 'Unable to connect to validation server.' );
+          grunt.fatal( "Unable to connect to validation server." );
           return;
         }
         if ( results.messages.length ) {
@@ -62,10 +60,10 @@ grunt.registerTask( "lint5", "HTML5 validation", function() {
             });                
 
             if ( !ignored ) {            
-              if ( type === 'error' ) {
+              if ( type === "error" ) {
                 errors++;
                 grunt.log.error( formatted );
-              } else if ( type !== 'ignored' && type !== 'error' ) {
+              } else if ( type !== "ignored" && type !== "error" ) {
                 grunt.fail.warn( formatted );
               }
             }
