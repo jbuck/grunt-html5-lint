@@ -34,15 +34,15 @@ grunt.registerTask( "lint5", "HTML5 validation", function() {
       if ( pending === 0 ) {
         var passed = errors === 0;
         if ( passed ) {
-          grunt.log.ok( files.length + " file" + (files.length === 1 ? "" : "s") + " lint free.");
+          grunt.log.ok( files.length + " file" + ( files.length === 1 ? "" : "s" ) + " lint free." );
         }
         done( passed );
       }
     }
 
     files.forEach( function( file ) {
-      var data = _.extend( defaults, templates[ file ] ),
-          html = env.getTemplate( file ).render( data );
+      var html = env.getTemplate( file ).render( defaults );
+
       html5Lint( html, function( err, results ) {
         if ( err ) {
           grunt.fatal( "Unable to connect to validation server." );
@@ -73,5 +73,5 @@ grunt.registerTask( "lint5", "HTML5 validation", function() {
       });
     });
   });
-
 };
+
