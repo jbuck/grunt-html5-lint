@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "0.4.3"
+    "grunt-contrib-jshint": "0.4.3",
+    "grunt-contrib-nodeunit": "0.3.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
@@ -31,8 +32,8 @@
     "lint"
   ],
   "homepage": "https://github.com/mjschranz/grunt-html5-lint",
-  "directories": {
-    "test": "test"
+  "scripts": {
+    "test": "grunt test"
   },
   "license": "MIT"
 }

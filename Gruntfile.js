@@ -12,6 +12,12 @@ module.exports = function( grunt ) {
       options: {
         jshintrc: ".jshintrc",
       }
+    },
+    nodeunit: {
+    all: [ "test/*_test.js" ],
+      options: {
+        reporter: "tap"
+      }
     }
   });
 
@@ -25,5 +31,7 @@ module.exports = function( grunt ) {
   // plugin's task(s), then test the result.
   // By default, lint and run all tests.
   grunt.registerTask( "default", [ "jshint" ] );
+
+  grunt.registerTask( "test", [ "jshint", "nodeunit" ] );
 
 };

@@ -5,12 +5,11 @@ module.exports = function( grunt ) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-grunt.registerTask( "grunt-html5-lint", "HTML5 validation", function() {
+  grunt.registerTask( "grunt-html5-lint", "HTML5 validation", function() {
     grunt.config.requires( "grunt-html5-lint.views" );
     grunt.config.requires( "grunt-html5-lint.templates" );
 
-    var _ = grunt.util._,
-        html5Lint = require( "html5-lint" ),
+    var html5Lint = require( "html5-lint" ),
         nunjucks = require( "nunjucks" ),
         views = grunt.config( "grunt-html5-lint.views" ),
         defaults = grunt.config( "grunt-html5-lint.defaults" ) || {},
