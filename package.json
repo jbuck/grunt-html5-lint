@@ -15,7 +15,7 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "html5-lint": "0.2.1",
+    "html5-lint": "0.2.2",
     "nunjucks": "0.1.9"
   },
   "devDependencies": {
